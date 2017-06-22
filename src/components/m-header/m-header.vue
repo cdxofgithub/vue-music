@@ -10,5 +10,5 @@ export default {}
 </script>
 
 <style lang="stylus">
-  @import 'm-header.styl'
+  @import './m-header.styl'
 </style>
