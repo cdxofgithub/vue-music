@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    hahaha
+    <m-header></m-header>
   </div>
 </template>
 
 <script>
+import MHeader from 'components/m-header/m-header'
 export default {
-  name: 'app'
+  components: {
+    MHeader
+  }
 }
 </script>
 
 <style lang='stylus' rel="stylesheet" scoped>
-  @import "common/stylus/variable.styl"
 
-  #app
-    color $color-theme
 </style>
