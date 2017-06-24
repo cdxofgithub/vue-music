@@ -19,3 +19,31 @@
         text-align: center
         font-size: $font-size-medium
         color: $color-theme
+      .item
+        display flex
+        box-sizing: border-box
+        align-items: center  // 居中对齐弹性布盒的各项
+        padding: 0 20px 20px 20px
+        .icon
+          flex: 0 0 60px
+          width: 60px
+          padding-right: 20px
+        .text
+          display: flex
+          flex-direction: column  // 垂直方向顶对齐
+          justify-content: center  // 弹性项目居中紧挨着填充
+          flex: 1
+          line-height: 20px
+          overflow: hidden
+          font-size: $font-size-medium
+          .name
+            margin-bottom: 10px
+            color: $color-text
+          .desc
+            color: $color-text-d
+
+    .loading-container
+      position: absolute
+      width: 100%
+      top: 50%
+      transform: translateY(-50%)
