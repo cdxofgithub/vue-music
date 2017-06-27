@@ -78,8 +78,7 @@
           snap: true, // 该属性是给 slider 组件使用的，普通的列表滚动不需要配置
           snapLoop: this.loop,  // 是否可以无缝循环轮播
           snapThreshold: 0.3,  // 用手指滑动时页面可切换的阈值，大于这个阈值可以滑动的下一页
-          snapSpeed: 400, // 轮播图切换的动画时间
-          click: true
+          snapSpeed: 400 // 轮播图切换的动画时间
         })
 
         this.slider.on('scrollEnd', () => {  // 每次滚动会派发一个事件，监听该事件获取当前页面的下标

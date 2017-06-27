@@ -6,7 +6,8 @@
           <slider>
             <div v-for="item in recommends">
               <a :href="item.linkUrl">
-                <img @load="loadImage" :src="item.picUrl">  <!--有图片被渲染调用loadImage-->
+                <!--needclick 解决轮播图片不能点击的问题-->
+                <img class="needclick" @load="loadImage" :src="item.picUrl">  <!--有图片被渲染调用loadImage-->
               </a>
             </div>
           </slider>
@@ -16,7 +17,7 @@
           <ul>
             <li v-for="item in discList" class="item">
               <div class="icon">
-                <img :src="item.imgurl" width="60" height="60"/>
+                <img v-lazy="item.imgurl" width="60" height="60"/>   <!-- v-lazy 图片懒加载-->
               </div>
               <div class="text">
                 <h2 class="name" v-html="item.creator.name"></h2>
@@ -25,6 +26,9 @@
             </li>
           </ul>
         </div>
+      </div>
+      <div class="loading-container" v-show="!discList.length">
+        <loading></loading>
       </div>
     </scroll>
   </div>
@@ -35,6 +39,7 @@
   import {getRecommend, getDiscList} from 'api/recommend'
   import {ERR_OK} from 'api/config'
   import Scroll from 'base/scroll/scroll'
+  import Loading from 'base/loading/loading'
 
   export default {
     data () {
@@ -49,7 +54,8 @@
     },
     components: {
       Slider,
-      Scroll
+      Scroll,
+      Loading
     },
     methods: {
       _getRecommend() {
