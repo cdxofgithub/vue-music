@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+**持续更新中。。。**
+
 ``` bash
 # install dependencies
 npm install
